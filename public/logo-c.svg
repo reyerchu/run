@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+  <!-- C: Abstract forward arrow / chevron - speed + direction -->
+  <rect width="36" height="36" rx="8" fill="#064E3B"/>
+  <path d="M12 8 L24 18 L12 28" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M12 8 L24 18 L12 28" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none" transform="translate(-6,0)" opacity="0.4"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+  <!-- G: Minimalist pin + pulse/heartbeat line -->
+  <rect width="36" height="36" rx="8" fill="#111827"/>
+  <path d="M6 20 L12 20 L15 12 L18 26 L21 16 L24 20 L30 20" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="18" cy="9" r="3" fill="none" stroke="white" stroke-width="1.5"/>
+  <circle cx="18" cy="9" r="1" fill="white"/>
+</svg>

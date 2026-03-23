@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+  <!-- H: Perspective road vanishing point -->
+  <rect width="36" height="36" rx="8" fill="#064E3B"/>
+  <path d="M4 32 L18 10 L32 32" stroke="white" stroke-width="2" stroke-linejoin="round" fill="none" opacity="0.3"/>
+  <path d="M10 32 L18 14 L26 32" stroke="white" stroke-width="2" stroke-linejoin="round" fill="none" opacity="0.6"/>
+  <path d="M15 32 L18 18 L21 32" stroke="white" stroke-width="2" stroke-linejoin="round" fill="none"/>
+  <circle cx="18" cy="8" r="2.5" fill="#10B981"/>
+</svg>

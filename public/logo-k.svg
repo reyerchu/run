@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+  <!-- K: Refined flag - thinner pole, waving flag shape -->
+  <rect width="36" height="36" rx="8" fill="#111827"/>
+  <line x1="11" y1="8" x2="11" y2="30" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  <path d="M11 8 Q18 10 25 8 Q18 14 25 16 L11 16 Z" fill="#10B981"/>
+</svg>

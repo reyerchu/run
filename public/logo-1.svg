@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" fill="none">
+  <!-- Option 1: Abstract road/path converging to horizon - minimal geometric -->
+  <rect width="40" height="40" rx="8" fill="#059669"/>
+  <path d="M20 8 L14 32 H18 L20 22 L22 32 H26 Z" fill="white" opacity="0.9"/>
+  <circle cx="20" cy="11" r="2" fill="white" opacity="0.6"/>
+</svg>

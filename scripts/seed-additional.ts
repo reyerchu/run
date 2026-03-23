@@ -1,0 +1,223 @@
+import { PrismaClient } from "@prisma/client";
+
+const prisma = new PrismaClient();
+
+const events = [
+  // === 之前有但這次漏掉的真實台灣賽事 ===
+  {
+    name: "2026 台北馬拉松",
+    nameEn: "2026 Taipei Marathon",
+    region: "taiwan",
+    country: "台灣",
+    city: "台北市",
+    date: new Date("2026-12-20"),
+    distances: "全馬,半馬,10K",
+    status: "expected",
+    websiteUrl: "https://www.taipeimarathon.org.tw/",
+    description: "台北市年度最大路跑盛事，路線經過總統府、台北101等地標。每年12月第三個週日舉辦。",
+    source: "台北馬拉松官網",
+    verified: true,
+    featured: true,
+    isRecurring: true,
+    estimatedMonth: 12,
+  },
+  {
+    name: "2026 高雄馬拉松",
+    nameEn: "2026 Kaohsiung Marathon",
+    region: "taiwan",
+    country: "台灣",
+    city: "高雄市",
+    date: new Date("2026-02-01"),
+    distances: "全馬,半馬,10K",
+    status: "expected",
+    websiteUrl: "https://www.kaohsiungmarathon.org.tw/",
+    description: "高雄年度馬拉松賽事，沿愛河與港區路線，氣候溫暖適合跑步。每年2月舉辦。",
+    source: "World Athletics",
+    verified: true,
+    isRecurring: true,
+    estimatedMonth: 2,
+  },
+  {
+    name: "2026 太魯閣峽谷馬拉松",
+    nameEn: "2026 Taroko Gorge Marathon",
+    region: "taiwan",
+    country: "台灣",
+    city: "花蓮縣",
+    date: new Date("2026-11-07"),
+    distances: "全馬,半馬,5K",
+    status: "expected",
+    websiteUrl: "https://www.taroko-marathon.com.tw/",
+    description: "穿越太魯閣國家公園壯麗峽谷的馬拉松，被譽為全台最美賽道。每年11月第一個週六舉辦。",
+    source: "太魯閣馬拉松官網",
+    verified: true,
+    featured: true,
+    isRecurring: true,
+    estimatedMonth: 11,
+  },
+  {
+    name: "2026 田中馬拉松",
+    nameEn: "2026 Tianzhong Marathon",
+    region: "taiwan",
+    country: "台灣",
+    city: "彰化縣",
+    date: new Date("2026-11-08"),
+    distances: "全馬,半馬,10K",
+    status: "expected",
+    description: "以「最熱情」聞名的馬拉松，沿途鄉親夾道加油、補給豐富。每年11月舉辦。",
+    source: "運動筆記",
+    verified: true,
+    isRecurring: true,
+    estimatedMonth: 11,
+  },
+  {
+    name: "2026 日月潭環湖馬拉松",
+    nameEn: "2026 Sun Moon Lake Marathon",
+    region: "taiwan",
+    country: "台灣",
+    city: "南投縣",
+    date: new Date("2026-10-25"),
+    distances: "全馬,半馬",
+    status: "expected",
+    description: "環繞日月潭湖畔的馬拉松，湖光山色美不勝收。每年10月舉辦。",
+    source: "運動筆記",
+    verified: true,
+    isRecurring: true,
+    estimatedMonth: 10,
+  },
+  {
+    name: "2026 台南古都馬拉松",
+    nameEn: "2026 Tainan Ancient Capital Marathon",
+    region: "taiwan",
+    country: "台灣",
+    city: "台南市",
+    date: new Date("2026-03-01"),
+    distances: "全馬,半馬,10K",
+    status: "expected",
+    description: "穿越台南歷史古蹟與美食街區的馬拉松賽事。每年3月舉辦。",
+    source: "運動筆記",
+    verified: true,
+    isRecurring: true,
+    estimatedMonth: 3,
+  },
+  {
+    name: "2026 渣打臺北公益馬拉松",
+    nameEn: "2026 Standard Chartered Taipei Charity Marathon",
+    region: "taiwan",
+    country: "台灣",
+    city: "台北市",
+    date: new Date("2026-01-18"),
+    distances: "全馬,半馬,10K,3K",
+    status: "expected",
+    websiteUrl: "https://www.sc.com/tw/marathon/",
+    description: "渣打銀行主辦的公益馬拉松，為視障跑者與弱勢團體募款。每年1月舉辦。",
+    source: "渣打馬拉松官網",
+    verified: true,
+    isRecurring: true,
+    estimatedMonth: 1,
+  },
+  {
+    name: "2026 阿里山神木馬拉松",
+    nameEn: "2026 Alishan Sacred Tree Marathon",
+    region: "taiwan",
+    country: "台灣",
+    city: "嘉義縣",
+    date: new Date("2026-06-14"),
+    distances: "全馬,半馬",
+    status: "expected",
+    description: "以阿里山森林鐵路和神木群為主題的高山馬拉松，海拔落差大，挑戰性高。每年6月舉辦。",
+    source: "運動筆記",
+    verified: true,
+    isRecurring: true,
+    estimatedMonth: 6,
+  },
+
+  // === 之前有但漏掉的真實國際賽事 ===
+  {
+    name: "香港馬拉松 2026",
+    nameEn: "Standard Chartered Hong Kong Marathon 2026",
+    region: "international",
+    country: "香港",
+    city: "Hong Kong",
+    date: new Date("2026-01-18"),
+    distances: "Full Marathon,Half Marathon,10K",
+    status: "completed",
+    websiteUrl: "https://www.hkmarathon.com/",
+    description: "渣打香港馬拉松，World Athletics 標籤賽事，路線經過青馬大橋與維港海底隧道。",
+    source: "World Athletics",
+    verified: true,
+  },
+  {
+    name: "紐約馬拉松 2026",
+    nameEn: "TCS New York City Marathon 2026",
+    region: "international",
+    country: "美國",
+    city: "New York",
+    date: new Date("2026-11-01"),
+    distances: "Full Marathon",
+    status: "expected",
+    websiteUrl: "https://www.nyrr.org/tcsnycmarathon",
+    registrationUrl: "https://www.nyrr.org/tcsnycmarathon/runners/apply",
+    description: "世界六大馬拉松之一，路線穿越紐約五大區，每年超過 5 萬名跑者參加。每年11月第一個週日舉辦。",
+    source: "World Athletics",
+    verified: true,
+    featured: true,
+    isRecurring: true,
+    estimatedMonth: 11,
+  },
+  {
+    name: "芝加哥馬拉松 2026",
+    nameEn: "Bank of America Chicago Marathon 2026",
+    region: "international",
+    country: "美國",
+    city: "Chicago",
+    date: new Date("2026-10-11"),
+    distances: "Full Marathon",
+    status: "expected",
+    websiteUrl: "https://www.chicagomarathon.com/",
+    registrationUrl: "https://www.chicagomarathon.com/runners/application/",
+    description: "世界六大馬拉松之一，以平坦快速賽道聞名，穿越芝加哥 29 個社區。每年10月第二個週日舉辦。",
+    source: "World Athletics",
+    verified: true,
+    featured: true,
+    isRecurring: true,
+    estimatedMonth: 10,
+  },
+  {
+    name: "大阪馬拉松 2026",
+    nameEn: "Osaka Marathon 2026",
+    region: "international",
+    country: "日本",
+    city: "Osaka",
+    date: new Date("2026-02-22"),
+    distances: "Full Marathon",
+    status: "expected",
+    websiteUrl: "https://www.osaka-marathon.com/",
+    description: "穿越大阪城、道頓堀等著名景點的城市馬拉松。每年2月舉辦。",
+    source: "World Athletics",
+    verified: true,
+    isRecurring: true,
+    estimatedMonth: 2,
+  },
+];
+
+async function seed() {
+  console.log("🌱 Supplementing with additional events...");
+
+  for (const ev of events) {
+    // Check for duplicates by name
+    const existing = await prisma.event.findFirst({ where: { name: ev.name } });
+    if (existing) {
+      console.log(`  ⏭️  ${ev.name} (already exists)`);
+      continue;
+    }
+    await prisma.event.create({ data: ev });
+    console.log(`  ✅ ${ev.name}`);
+  }
+
+  const total = await prisma.event.count();
+  console.log(`\n🎉 Done! Total events in DB: ${total}`);
+}
+
+seed()
+  .catch(console.error)
+  .finally(() => prisma.$disconnect());

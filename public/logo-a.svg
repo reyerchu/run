@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+  <!-- A: Minimal track lanes with finish line accent -->
+  <rect width="36" height="36" rx="8" fill="#111827"/>
+  <line x1="10" y1="8" x2="10" y2="28" stroke="#10B981" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="18" y1="8" x2="18" y2="28" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+  <line x1="26" y1="8" x2="26" y2="28" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" opacity="0.3"/>
+  <rect x="8" y="10" width="20" height="3" rx="1" fill="white" opacity="0.9"/>
+</svg>

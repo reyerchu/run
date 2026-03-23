@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+  <!-- N: M letterform with flag accent on peak -->
+  <rect width="36" height="36" rx="8" fill="#064E3B"/>
+  <path d="M8 28 V12 L18 22 L28 12 V28" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M28 12 L28 6" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M28 6 Q24 7.5 28 9" fill="#10B981"/>
+</svg>

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+  <!-- L: Flag pennant + horizontal finish line -->
+  <rect width="36" height="36" rx="8" fill="#064E3B"/>
+  <line x1="10" y1="7" x2="10" y2="29" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+  <path d="M10 7 L26 12 L10 17 Z" fill="#10B981"/>
+  <line x1="7" y1="29" x2="29" y2="29" stroke="white" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+</svg>
