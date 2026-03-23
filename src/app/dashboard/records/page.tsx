@@ -126,7 +126,7 @@ export default function RecordsPage() {
               </thead>
               <tbody className="divide-y divide-gray-950/5">
                 {records.map((record) => (
-                  <tr key={record.id} className="hover:bg-gray-950/[2.5%] transition-colors">
+                  <tr key={record.id} className="hover:bg-gray-950/[2.5%] transition-colors cursor-pointer" onClick={() => window.location.href = `/dashboard/records/${record.id}`}>
                     <td className="px-6 py-4">
                       <p className="text-sm font-medium text-gray-900">{record.eventName}</p>
                       {record.category && (
@@ -149,7 +149,7 @@ export default function RecordsPage() {
                         : record.rank || "—"}
                     </td>
                     <td className="px-6 py-4 text-right">
-                      <div className="flex justify-end gap-3">
+                      <div className="flex justify-end gap-3" onClick={e => e.stopPropagation()}>
                         <Link
                           href={`/dashboard/records/${record.id}/edit`}
                           className="text-sm text-emerald-600 hover:text-emerald-500 font-medium transition-colors"
@@ -173,12 +173,12 @@ export default function RecordsPage() {
           {/* Mobile cards */}
           <div className="sm:hidden divide-y divide-gray-950/5">
             {records.map((record) => (
-              <div key={record.id} className="p-4">
+              <div key={record.id} className="p-4 cursor-pointer hover:bg-gray-950/[2.5%] transition-colors" onClick={() => window.location.href = `/dashboard/records/${record.id}`}>
                 <div className="flex justify-between items-start mb-2">
                   <h3 className="text-sm font-semibold text-gray-950 tracking-tight">
                     {record.eventName}
                   </h3>
-                  <div className="flex gap-3 ml-2">
+                  <div className="flex gap-3 ml-2" onClick={e => e.stopPropagation()}>
                     <Link
                       href={`/dashboard/records/${record.id}/edit`}
                       className="text-xs text-emerald-600 font-medium"

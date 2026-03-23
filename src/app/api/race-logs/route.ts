@@ -77,6 +77,9 @@ export async function POST(request: NextRequest) {
       category,
       note,
       photoUrl,
+      certUrl,
+      certImage,
+      bibNumber,
     } = data;
 
     // 基本驗證
@@ -109,6 +112,9 @@ export async function POST(request: NextRequest) {
         category: category || null,
         note: note || null,
         photoUrl: photoUrl || null,
+        certUrl: certUrl || null,
+        certImage: certImage || null,
+        bibNumber: bibNumber || null,
       },
       include: {
         event: {
