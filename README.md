@@ -11,7 +11,7 @@
 - 📅 **行事曆** — 月曆檢視所有賽事時間
 - 🔍 **搜尋篩選** — 依月份、距離、狀態、關鍵字快速找賽事
 - 👤 **跑者儀表板** — 個人檔案、跑步紀錄管理
-- 🤖 **自動爬蟲** — 定期從 bao-ming.com 抓取最新賽事（每週一/四 03:00）
+- 🤖 **自動爬蟲** — 每日從 bao-ming.com 抓取最新賽事（每天 03:00）
 
 ## Tech Stack
 
@@ -51,7 +51,7 @@ pm2 start npm --name runner-will-guide -- start
 # Run manually
 npx ts-node scripts/crawlers/baoming.ts
 
-# Automated: cron job runs every Mon/Thu at 03:00 AM (Asia/Taipei)
+# Automated: cron job runs daily at 03:00 AM (Asia/Taipei)
 ```
 
 ## Architecture
