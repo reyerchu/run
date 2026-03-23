@@ -14,19 +14,19 @@ export function daysUntil(date: string | Date): number {
 export function getStatusLabel(status: string): { label: string; color: string } {
   switch (status) {
     case "open":
-      return { label: "報名中", color: "bg-green-500" };
+      return { label: "報名中", color: "#22c55e" };
     case "upcoming":
-      return { label: "即將開放", color: "bg-blue-500" };
+      return { label: "即將開放", color: "#3b82f6" };
     case "closed":
-      return { label: "報名截止", color: "bg-orange-500" };
+      return { label: "報名截止", color: "#f97316" };
     case "full":
-      return { label: "已額滿", color: "bg-red-500" };
+      return { label: "已額滿", color: "#ef4444" };
     case "completed":
-      return { label: "已完賽", color: "bg-gray-400" };
+      return { label: "已完賽", color: "#9ca3af" };
     case "expected":
-      return { label: "📅 預計舉辦", color: "bg-amber-500" };
+      return { label: "預計舉辦", color: "#f59e0b" };
     default:
-      return { label: status, color: "bg-gray-500" };
+      return { label: status, color: "#6b7280" };
   }
 }
 

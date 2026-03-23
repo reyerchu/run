@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
 import Image from "next/image";
+import { LayoutDashboard, ClipboardList, User, LogOut, ChevronDown } from "lucide-react";
 
 export default function UserMenu() {
   const { data: session, status } = useSession();
@@ -56,21 +57,11 @@ export default function UserMenu() {
         <span className="text-sm font-medium text-gray-700 max-w-[100px] truncate">
           {session.user.name || session.user.email}
         </span>
-        <svg
+        <ChevronDown
           className={`h-4 w-4 text-gray-400 transition-transform ${
             isOpen ? "rotate-180" : ""
           }`}
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M19 9l-7 7-7-7"
-          />
-        </svg>
+        />
       </button>
 
       {isOpen && (
@@ -78,23 +69,26 @@ export default function UserMenu() {
           <div className="py-1">
             <Link
               href="/dashboard"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+              className="flex items-center gap-2.5 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
               onClick={() => setIsOpen(false)}
             >
+              <LayoutDashboard className="h-4 w-4 text-gray-400" />
               個人儀表板
             </Link>
             <Link
               href="/dashboard/records"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+              className="flex items-center gap-2.5 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
               onClick={() => setIsOpen(false)}
             >
+              <ClipboardList className="h-4 w-4 text-gray-400" />
               跑步紀錄
             </Link>
             <Link
               href="/dashboard/profile"
-              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+              className="flex items-center gap-2.5 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
               onClick={() => setIsOpen(false)}
             >
+              <User className="h-4 w-4 text-gray-400" />
               個人檔案
             </Link>
             <hr className="my-1" />
@@ -103,8 +97,9 @@ export default function UserMenu() {
                 setIsOpen(false);
                 signOut({ callbackUrl: "/" });
               }}
-              className="block w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 transition-colors"
+              className="flex items-center gap-2.5 w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-100 transition-colors"
             >
+              <LogOut className="h-4 w-4" />
               登出
             </button>
           </div>

@@ -1,4 +1,4 @@
-export const metadata = { title: "服務條款 | Marathon Board" };
+export const metadata = { title: "服務條款 | Runner Will Guide" };
 
 export default function TermsPage() {
   return (
@@ -9,7 +9,7 @@ export default function TermsPage() {
 
         <div className="prose prose-gray max-w-none space-y-6 text-gray-700 text-[15px] leading-relaxed">
           <h2 className="text-lg font-semibold text-gray-900 mt-8">1. 接受條款</h2>
-          <p>歡迎使用 Marathon Board（以下簡稱「本平台」），由 will.guide 營運。當您存取或使用本網站時，即表示您已閱讀、理解並同意受本服務條款之約束。若您不同意本服務條款的任何部分，請立即停止使用本網站。</p>
+          <p>歡迎使用 Runner Will Guide（以下簡稱「本平台」），由 will.guide 營運。當您存取或使用本網站時，即表示您已閱讀、理解並同意受本服務條款之約束。若您不同意本服務條款的任何部分，請立即停止使用本網站。</p>
 
           <h2 className="text-lg font-semibold text-gray-900 mt-8">2. 服務說明</h2>
           <p>本平台提供馬拉松賽事資訊查詢、跑者紀錄管理、社群交流等服務，包括台灣及國際賽事的時間、報名資訊與相關連結。本平台保留隨時修改、暫停或終止全部或部分服務之權利，且無需事先通知。</p>
@@ -58,7 +58,7 @@ export default function TermsPage() {
 
           <h2 className="text-lg font-semibold text-gray-900 mt-8">12. 聯絡我們</h2>
           <p>若您對本服務條款有任何疑問，歡迎透過以下方式與我們聯繫：</p>
-          <p>Marathon Board by will.guide<br />電子郵件：<a href="mailto:contact@will.guide" className="text-emerald-600 hover:text-emerald-500">contact@will.guide</a></p>
+          <p>Runner Will Guide by will.guide<br />電子郵件：<a href="mailto:contact@will.guide" className="text-emerald-600 hover:text-emerald-500">contact@will.guide</a></p>
         </div>
       </div>
     </section>

@@ -1,8 +1,8 @@
-# 🏃 Marathon Board | 馬拉松賽事看板
+# 🏃 Runner Will Guide
 
-一站式馬拉松賽事資訊平台，讓每位跑者都能找到心目中的賽事。
+> **Runner will, your guide.** 為每位跑者找到下一場賽事
 
-🌐 **https://run.will.guide**
+🌐 **https://runner.will.guide**
 
 ## 功能
 
@@ -11,7 +11,7 @@
 - 📅 **行事曆** — 月曆檢視所有賽事時間
 - 🔍 **搜尋篩選** — 依月份、距離、狀態、關鍵字快速找賽事
 - 👤 **跑者儀表板** — 個人檔案、跑步紀錄管理
-- 🤖 **自動爬蟲** — 定期從 bao-ming.com 抓取最新賽事
+- 🤖 **自動爬蟲** — 定期從 bao-ming.com 抓取最新賽事（每週一/四 03:00）
 
 ## Tech Stack
 
@@ -19,7 +19,9 @@
 - **Styling:** Tailwind CSS
 - **Database:** SQLite + Prisma 5
 - **Auth:** NextAuth.js (Google OAuth + Email/Password)
-- **Deployment:** PM2 + Apache reverse proxy
+- **Icons:** Lucide React
+- **Crawler:** Puppeteer (bao-ming.com)
+- **Deployment:** PM2 + Apache reverse proxy + Let's Encrypt SSL
 
 ## Getting Started
 
@@ -40,8 +42,26 @@ npm run dev
 
 # Production
 npm run build
-pm2 start npm --name marathon-board -- start
+pm2 start npm --name runner-will-guide -- start
 ```
+
+## Crawler
+
+```bash
+# Run manually
+npx ts-node scripts/crawlers/baoming.ts
+
+# Automated: cron job runs every Mon/Thu at 03:00 AM (Asia/Taipei)
+```
+
+## Architecture
+
+```
+External → 8HD-A (Apache/SSL) → 8HD-8 (Next.js :3849)
+```
+
+- **runner.will.guide** — production
+- **run.will.guide** — alias (same app)
 
 ## License
 

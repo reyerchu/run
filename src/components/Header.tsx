@@ -20,11 +20,11 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/80 backdrop-blur-md">
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md ring-1 ring-gray-950/10">
       <div className="container-narrow flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2 text-lg font-bold tracking-tight">
           <img src="/logo-2.svg" alt="MB" className="w-7 h-7" />
-          <span>Marathon Board</span>
+          <span>Runner Will Guide</span>
         </Link>
 
         {/* Desktop nav */}
@@ -64,14 +64,14 @@ export function Header() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <nav className="sm:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-3">
+        <nav className="sm:hidden bg-white px-6 py-4 space-y-3 ring-1 ring-inset ring-gray-950/5">
           {navItems.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               onClick={() => setMobileOpen(false)}
               className={cn(
-                "block text-sm font-medium py-2",
+                "block text-sm font-medium py-2 leading-7",
                 pathname === item.href ? "text-emerald-600" : "text-gray-600"
               )}
             >
@@ -80,7 +80,7 @@ export function Header() {
           ))}
           
           {/* Mobile user menu */}
-          <div className="pt-4 border-t border-gray-100">
+          <div className="pt-4" style={{ borderTop: "1px solid rgba(17, 17, 17, 0.05)" }}>
             <UserMenu />
           </div>
         </nav>

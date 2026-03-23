@@ -8,15 +8,15 @@ import AuthProvider from "@/components/AuthProvider";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Marathon Board | 馬拉松賽事看板",
-  description: "一站式馬拉松賽事資訊平台，查詢台灣及國際賽事、報名資訊、跑者交流",
+  title: "Runner Will Guide | 跑者賽事指南",
+  description: "Runner will, your guide. 為每位跑者找到下一場賽事，查詢台灣及國際賽事、報名資訊、跑者交流",
   icons: {
     icon: "/favicon.svg",
   },
   openGraph: {
-    title: "Marathon Board | 馬拉松賽事看板",
-    description: "一站式馬拉松賽事資訊平台",
-    url: "https://run.will.guide",
+    title: "Runner Will Guide | 跑者賽事指南",
+    description: "Runner will, your guide. 為每位跑者找到下一場賽事",
+    url: "https://runner.will.guide",
   },
 };
 

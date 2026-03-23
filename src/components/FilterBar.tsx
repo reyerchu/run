@@ -44,7 +44,7 @@ export function FilterBar() {
     router.push(`?${params.toString()}`);
   };
 
-  const selectClass = "rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm text-gray-700 focus:border-emerald-500 focus:outline-none focus:ring-1 focus:ring-emerald-500 transition-colors";
+  const selectClass = "rounded-lg bg-white px-4 py-2.5 text-sm text-gray-700 ring-1 ring-gray-950/10 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition-colors shadow-sm";
 
   return (
     <div className="flex flex-wrap items-center gap-3">

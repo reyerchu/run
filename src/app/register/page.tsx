@@ -92,14 +92,14 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-emerald-50 to-white">
+    <div className="min-h-screen bg-gray-950/[1%]">
       <div className="flex min-h-screen items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-md space-y-8">
           <div className="text-center">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900">
               建立您的帳號
             </h1>
-            <p className="mt-2 text-sm text-gray-600">
+            <p className="mt-2 text-sm text-gray-600 leading-7">
               已經有帳號了？{" "}
               <Link
                 href="/login"
@@ -110,9 +110,9 @@ export default function RegisterPage() {
             </p>
           </div>
 
-          <div className="bg-white py-8 px-6 shadow-xl rounded-xl">
+          <div className="bg-white py-8 px-6 ring-1 ring-gray-950/10 shadow-sm rounded-xl">
             {error && (
-              <div className="mb-4 p-4 text-sm text-red-600 bg-red-50 rounded-lg border border-red-200">
+              <div className="mb-4 p-4 text-sm text-red-600 bg-red-950/[2.5%] ring-1 ring-inset ring-red-500/20 rounded-lg leading-7">
                 {error}
               </div>
             )}
@@ -121,7 +121,7 @@ export default function RegisterPage() {
             <button
               onClick={handleGoogleSignIn}
               disabled={isLoading}
-              className="group relative w-full flex justify-center py-3 px-4 border border-gray-300 text-sm font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="group relative w-full flex justify-center py-2 px-4 text-sm font-medium rounded-full text-gray-700 bg-white ring-1 ring-gray-950/10 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
                 <path
@@ -147,7 +147,7 @@ export default function RegisterPage() {
             <div className="mt-6">
               <div className="relative">
                 <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-gray-300" />
+                  <div className="w-full" style={{ borderTop: "1px solid rgba(17, 17, 17, 0.1)" }} />
                 </div>
                 <div className="relative flex justify-center text-sm">
                   <span className="px-2 bg-white text-gray-500">或</span>
@@ -168,7 +168,7 @@ export default function RegisterPage() {
                   required
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="relative block w-full rounded-lg border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-emerald-500 focus:outline-none focus:ring-emerald-500 sm:text-sm"
+                  className="relative block w-full rounded-lg ring-1 ring-gray-950/10 px-3 py-3 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-emerald-500 focus:outline-none shadow-sm sm:text-sm"
                   placeholder="姓名"
                 />
               </div>
@@ -185,7 +185,7 @@ export default function RegisterPage() {
                   required
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="relative block w-full rounded-lg border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-emerald-500 focus:outline-none focus:ring-emerald-500 sm:text-sm"
+                  className="relative block w-full rounded-lg ring-1 ring-gray-950/10 px-3 py-3 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-emerald-500 focus:outline-none shadow-sm sm:text-sm"
                   placeholder="電子郵件地址"
                 />
               </div>
@@ -202,7 +202,7 @@ export default function RegisterPage() {
                   required
                   value={formData.password}
                   onChange={handleInputChange}
-                  className="relative block w-full rounded-lg border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-emerald-500 focus:outline-none focus:ring-emerald-500 sm:text-sm"
+                  className="relative block w-full rounded-lg ring-1 ring-gray-950/10 px-3 py-3 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-emerald-500 focus:outline-none shadow-sm sm:text-sm"
                   placeholder="密碼（至少 6 個字符）"
                 />
               </div>
@@ -219,7 +219,7 @@ export default function RegisterPage() {
                   required
                   value={formData.confirmPassword}
                   onChange={handleInputChange}
-                  className="relative block w-full rounded-lg border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-emerald-500 focus:outline-none focus:ring-emerald-500 sm:text-sm"
+                  className="relative block w-full rounded-lg ring-1 ring-gray-950/10 px-3 py-3 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-emerald-500 focus:outline-none shadow-sm sm:text-sm"
                   placeholder="確認密碼"
                 />
               </div>
@@ -228,7 +228,7 @@ export default function RegisterPage() {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="group relative w-full flex justify-center py-2 px-4 text-sm font-medium rounded-full text-white bg-emerald-600 ring-1 ring-emerald-600/10 shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                   {isLoading ? "註冊中..." : "註冊"}
                 </button>

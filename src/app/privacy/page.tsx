@@ -1,15 +1,25 @@
-export const metadata = { title: "隱私政策 | Marathon Board" };
+export const metadata = { title: "隱私政策 | Runner Will Guide" };
 
 export default function PrivacyPage() {
   return (
     <section className="section-padding">
       <div className="container-narrow max-w-3xl">
-        <h1 className="text-3xl font-bold mb-2">隱私政策</h1>
-        <p className="text-sm text-gray-400 mb-8">最後更新日期：2026 年 3 月 23 日</p>
+        <div className="mb-8">
+          <p className="font-mono uppercase tracking-wider text-xs text-gray-600 mb-2">
+            PRIVACY POLICY
+          </p>
+          <h1>
+            <span className="font-semibold text-gray-950 text-3xl tracking-tight">隱私政策.</span>
+            <span className="font-medium text-gray-600 text-base ml-2">
+              我們如何保護與使用您的個人資料
+            </span>
+          </h1>
+          <p className="text-sm text-gray-400 mt-4 leading-7">最後更新日期：2026 年 3 月 23 日</p>
+        </div>
 
-        <div className="prose prose-gray max-w-none space-y-6 text-gray-700 text-[15px] leading-relaxed">
-          <h2 className="text-lg font-semibold text-gray-900 mt-8">1. 資料收集</h2>
-          <p>當您使用 Marathon Board（以下簡稱「本平台」）、註冊會員或使用跑者紀錄功能時，我們可能收集以下個人資料：</p>
+        <div className="max-w-none space-y-6 text-gray-700 text-[15px] leading-7">
+          <h2 className="text-lg font-semibold text-gray-900 mt-8 tracking-tight">1. 資料收集</h2>
+          <p>當您使用 Runner Will Guide（以下簡稱「本平台」）、註冊會員或使用跑者紀錄功能時，我們可能收集以下個人資料：</p>
           <ul className="list-disc pl-6 space-y-1">
             <li><strong>您主動提供的資料：</strong>姓名、電子郵件地址、個人簡介、跑步紀錄（賽事名稱、完賽時間、距離、配速等）、上傳之照片及貼文內容。</li>
             <li><strong>第三方登入資料：</strong>當您使用 Google 帳號登入時，我們會取得您的 Google 帳號公開資訊（姓名、電子郵件、大頭照）。</li>
@@ -65,7 +75,7 @@ export default function PrivacyPage() {
 
           <h2 className="text-lg font-semibold text-gray-900 mt-8">9. 聯絡我們</h2>
           <p>若您對本隱私政策有任何疑問或意見，歡迎透過以下方式與我們聯繫：</p>
-          <p>Marathon Board by will.guide<br />電子郵件：<a href="mailto:contact@will.guide" className="text-emerald-600 hover:text-emerald-500">contact@will.guide</a></p>
+          <p>Runner Will Guide by will.guide<br />電子郵件：<a href="mailto:contact@will.guide" className="text-emerald-600 hover:text-emerald-500">contact@will.guide</a></p>
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-export const metadata = { title: "免責聲明 | Marathon Board" };
+export const metadata = { title: "免責聲明 | Runner Will Guide" };
 
 export default function DisclaimerPage() {
   return (
@@ -9,7 +9,7 @@ export default function DisclaimerPage() {
 
         <div className="prose prose-gray max-w-none space-y-6 text-gray-700 text-[15px] leading-relaxed">
           <h2 className="text-lg font-semibold text-gray-900 mt-8">1. 服務說明</h2>
-          <p>Marathon Board（以下簡稱「本平台」）由 will.guide 營運，致力於提供台灣及國際馬拉松賽事資訊查詢、跑者紀錄管理與社群交流服務。本平台不保證所提供之服務完全符合所有用戶之個別需求。</p>
+          <p>Runner Will Guide（以下簡稱「本平台」）由 will.guide 營運，致力於提供台灣及國際馬拉松賽事資訊查詢、跑者紀錄管理與社群交流服務。本平台不保證所提供之服務完全符合所有用戶之個別需求。</p>
 
           <h2 className="text-lg font-semibold text-gray-900 mt-8">2. 內容免責聲明</h2>
           <p>本網站之所有內容，包括但不限於賽事資訊、日期、報名連結、數據及圖表，均僅供一般資訊參考之用，不構成任何形式之：</p>
@@ -51,7 +51,7 @@ export default function DisclaimerPage() {
 
           <h2 className="text-lg font-semibold text-gray-900 mt-8">10. 聯絡我們</h2>
           <p>若您對本免責聲明有任何疑問，歡迎透過以下方式與我們聯繫：</p>
-          <p>Marathon Board by will.guide<br />電子郵件：<a href="mailto:contact@will.guide" className="text-emerald-600 hover:text-emerald-500">contact@will.guide</a></p>
+          <p>Runner Will Guide by will.guide<br />電子郵件：<a href="mailto:contact@will.guide" className="text-emerald-600 hover:text-emerald-500">contact@will.guide</a></p>
         </div>
       </div>
     </section>

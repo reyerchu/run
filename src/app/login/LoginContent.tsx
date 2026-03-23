@@ -47,22 +47,22 @@ export default function LoginContent() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-emerald-50 to-white">
+    <div className="min-h-screen bg-gray-950/[1%]">
       <div className="flex min-h-screen items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-md space-y-8">
           <div className="text-center">
             <h1 className="text-3xl font-bold tracking-tight text-gray-900">登入您的帳號</h1>
-            <p className="mt-2 text-sm text-gray-600">
+            <p className="mt-2 text-sm text-gray-600 leading-7">
               沒有帳號嗎？{" "}
               <Link href="/register" className="font-medium text-emerald-600 hover:text-emerald-500">立即註冊</Link>
             </p>
           </div>
-          <div className="bg-white py-8 px-6 shadow-xl rounded-xl">
+          <div className="bg-white py-8 px-6 ring-1 ring-gray-950/10 shadow-sm rounded-xl">
             {error && (
-              <div className="mb-4 p-4 text-sm text-red-600 bg-red-50 rounded-lg border border-red-200">{error}</div>
+              <div className="mb-4 p-4 text-sm text-red-600 bg-red-950/[2.5%] ring-1 ring-inset ring-red-500/20 rounded-lg leading-7">{error}</div>
             )}
             <button onClick={handleGoogleSignIn} disabled={isLoading}
-              className="group relative w-full flex justify-center py-3 px-4 border border-gray-300 text-sm font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 disabled:opacity-50 transition-colors">
+              className="group relative w-full flex justify-center py-2 px-4 text-sm font-medium rounded-full text-gray-700 bg-white ring-1 ring-gray-950/10 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-emerald-500 disabled:opacity-50 transition-colors">
               <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
                 <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                 <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -71,18 +71,18 @@ export default function LoginContent() {
               </svg>
               使用 Google 登入
             </button>
-            <div className="mt-6"><div className="relative"><div className="absolute inset-0 flex items-center"><div className="w-full border-t border-gray-300"/></div><div className="relative flex justify-center text-sm"><span className="px-2 bg-white text-gray-500">或</span></div></div></div>
+            <div className="mt-6"><div className="relative"><div className="absolute inset-0 flex items-center"><div className="w-full" style={{ borderTop: "1px solid rgba(17, 17, 17, 0.1)" }}/></div><div className="relative flex justify-center text-sm"><span className="px-2 bg-white text-gray-500">或</span></div></div></div>
             <form className="mt-6 space-y-6" onSubmit={handleEmailSignIn}>
               <div>
                 <input id="email" type="email" autoComplete="email" required value={email} onChange={(e) => setEmail(e.target.value)}
-                  className="relative block w-full rounded-lg border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-emerald-500 focus:outline-none focus:ring-emerald-500 sm:text-sm" placeholder="電子郵件地址"/>
+                  className="relative block w-full rounded-lg ring-1 ring-gray-950/10 px-3 py-3 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-emerald-500 focus:outline-none shadow-sm sm:text-sm" placeholder="電子郵件地址"/>
               </div>
               <div>
                 <input id="password" type="password" autoComplete="current-password" required value={password} onChange={(e) => setPassword(e.target.value)}
-                  className="relative block w-full rounded-lg border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-emerald-500 focus:outline-none focus:ring-emerald-500 sm:text-sm" placeholder="密碼"/>
+                  className="relative block w-full rounded-lg ring-1 ring-gray-950/10 px-3 py-3 text-gray-900 placeholder-gray-500 focus:ring-2 focus:ring-emerald-500 focus:outline-none shadow-sm sm:text-sm" placeholder="密碼"/>
               </div>
               <button type="submit" disabled={isLoading}
-                className="group relative w-full flex justify-center py-3 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-emerald-500 disabled:opacity-50 transition-colors">
+                className="group relative w-full flex justify-center py-2 px-4 text-sm font-medium rounded-full text-white bg-emerald-600 ring-1 ring-emerald-600/10 shadow-sm hover:bg-emerald-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 disabled:opacity-50 transition-colors">
                 {isLoading ? "登入中..." : "登入"}
               </button>
             </form>
