@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏃 Marathon Board | 馬拉松賽事看板
+
+一站式馬拉松賽事資訊平台，讓每位跑者都能找到心目中的賽事。
+
+🌐 **https://run.will.guide**
+
+## 功能
+
+- 🇹🇼 **台灣賽事** — 全台路跑賽事一覽，篩選月份/距離/報名狀態
+- 🌍 **國際賽事** — 世界各地馬拉松資訊，含時區說明
+- 📅 **行事曆** — 月曆檢視所有賽事時間
+- 🔍 **搜尋篩選** — 依月份、距離、狀態、關鍵字快速找賽事
+- 👤 **跑者儀表板** — 個人檔案、跑步紀錄管理
+- 🤖 **自動爬蟲** — 定期從 bao-ming.com 抓取最新賽事
+
+## Tech Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Styling:** Tailwind CSS
+- **Database:** SQLite + Prisma 5
+- **Auth:** NextAuth.js (Google OAuth + Email/Password)
+- **Deployment:** PM2 + Apache reverse proxy
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install
+npm install
+
+# Setup database
+npx prisma generate
+npx prisma db push
+
+# Copy env
+cp .env.example .env
+# Edit .env with your credentials
+
+# Dev
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Production
+npm run build
+pm2 start npm --name marathon-board -- start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## License
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+MIT
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built with ❤️ by [will.guide](https://will.guide)
