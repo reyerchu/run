@@ -194,7 +194,7 @@ export default function DashboardPage() {
                 <div className="w-12 h-12 rounded-2xl bg-gray-100 ring-1 ring-inset ring-gray-950/5 flex items-center justify-center mx-auto mb-4">
                   <Trophy className="h-6 w-6 text-gray-400" />
                 </div>
-                <p className="text-sm text-gray-500 text-pretty">完成第一場比賽後，你的紀錄會顯示在這裡</p>
+                <p className="text-sm text-gray-500 text-pretty">完成第一場比賽後，您的紀錄會顯示在這裡</p>
               </div>
             )}
           </div>
@@ -216,17 +216,17 @@ export default function DashboardPage() {
         <Link href="/dashboard/records/new" className="group bg-gray-950/[2.5%] ring-1 ring-inset ring-gray-950/5 rounded-2xl p-5 hover:bg-gray-950/[4%] transition-colors">
           <PenLine className="h-5 w-5 text-gray-600 mb-2" />
           <p className="text-sm font-semibold text-gray-950 tracking-tight group-hover:text-emerald-600 transition-colors">新增跑步紀錄</p>
-          <p className="text-xs text-gray-500 mt-1 leading-5">記錄你的完賽成績</p>
+          <p className="text-xs text-gray-500 mt-1 leading-5">記錄您的完賽成績</p>
         </Link>
         <Link href="/taiwan" className="group bg-gray-950/[2.5%] ring-1 ring-inset ring-gray-950/5 rounded-2xl p-5 hover:bg-gray-950/[4%] transition-colors">
           <Compass className="h-5 w-5 text-gray-600 mb-2" />
           <p className="text-sm font-semibold text-gray-950 tracking-tight group-hover:text-emerald-600 transition-colors">探索賽事</p>
-          <p className="text-xs text-gray-500 mt-1 leading-5">找到你的下一場比賽</p>
+          <p className="text-xs text-gray-500 mt-1 leading-5">找到您的下一場比賽</p>
         </Link>
         <Link href="/dashboard/profile" className="group bg-gray-950/[2.5%] ring-1 ring-inset ring-gray-950/5 rounded-2xl p-5 hover:bg-gray-950/[4%] transition-colors">
           <User className="h-5 w-5 text-gray-600 mb-2" />
           <p className="text-sm font-semibold text-gray-950 tracking-tight group-hover:text-emerald-600 transition-colors">個人檔案</p>
-          <p className="text-xs text-gray-500 mt-1 leading-5">更新你的跑者資訊</p>
+          <p className="text-xs text-gray-500 mt-1 leading-5">更新您的跑者資訊</p>
         </Link>
       </div>
     </div>

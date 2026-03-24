@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useSession, signOut } from "next-auth/react";
 import Link from "next/link";
 import Image from "next/image";
-import { LayoutDashboard, ClipboardList, User, LogOut, ChevronDown } from "lucide-react";
+import { LayoutDashboard, ClipboardList, User, LogOut, ChevronDown, MessageSquarePlus } from "lucide-react";
 
 export default function UserMenu() {
   const { data: session, status } = useSession();
@@ -90,6 +90,14 @@ export default function UserMenu() {
             >
               <User className="h-4 w-4 text-gray-400" />
               個人檔案
+            </Link>
+            <Link
+              href="/dashboard/feedback"
+              className="flex items-center gap-2.5 px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              <MessageSquarePlus className="h-4 w-4 text-gray-400" />
+              意見反饋
             </Link>
             <hr className="my-1" />
             <button

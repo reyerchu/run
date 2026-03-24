@@ -2,7 +2,10 @@ import { prisma } from "@/lib/prisma";
 import { notFound } from "next/navigation";
 import { formatDate, formatEstimatedDate, daysUntil, getStatusLabel, computeEventStatus, parseDistances } from "@/lib/utils";
 import Link from "next/link";
-import { Flag, CalendarClock, Heart } from "lucide-react";
+import { Flag, CalendarClock } from "lucide-react";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/lib/auth";
+import EventDetailClient from "./EventDetailClient";
 
 export const dynamic = "force-dynamic";
 
@@ -18,6 +21,18 @@ export default async function EventDetailPage(props: { params: Promise<{ id: str
   });
 
   if (!event) notFound();
+
+  const session = await getServerSession(authOptions);
+  const isLoggedIn = !!session?.user;
+
+  // 查詢收藏狀態
+  let isFavorited = false;
+  if (session?.user?.id) {
+    const fav = await prisma.favorite.findUnique({
+      where: { eventId_userId: { eventId: id, userId: session.user.id } },
+    });
+    isFavorited = !!fav;
+  }
 
   const computedStatus = computeEventStatus(event);
   const { label, color } = getStatusLabel(computedStatus);
@@ -150,46 +165,15 @@ export default async function EventDetailPage(props: { params: Promise<{ id: str
           )}
         </div>
 
-        {/* Reviews */}
-        <div className="mb-12">
-          <h2 className="text-lg font-semibold mb-4 tracking-tight">跑者心得 ({event.reviews.length})</h2>
-          {event.reviews.length === 0 ? (
-            <p className="text-gray-400 text-sm leading-7">尚無心得分享，成為第一個分享的跑者吧！</p>
-          ) : (
-            <div className="space-y-4">
-              {event.reviews.map((r) => (
-                <div key={r.id} className="rounded-lg bg-gray-950/[2.5%] ring-1 ring-inset ring-gray-950/5 p-4">
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className="font-medium text-sm">{r.user.name}</span>
-                    <span className="text-yellow-500 text-sm">{"⭐".repeat(r.rating)}</span>
-                  </div>
-                  <p className="text-sm text-gray-600 leading-7 text-pretty">{r.content}</p>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* Photos */}
-        <div>
-          <h2 className="text-lg font-semibold mb-4 tracking-tight">照片牆 ({event.photos.length})</h2>
-          {event.photos.length === 0 ? (
-            <p className="text-gray-400 text-sm leading-7">尚無照片，快來上傳你的比賽照片！</p>
-          ) : (
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-              {event.photos.map((p) => (
-                <div key={p.id} className="aspect-square rounded-lg overflow-hidden bg-gray-100 ring-1 ring-gray-950/10 shadow-sm">
-                  <img src={p.imageUrl} alt={p.caption || ""} className="w-full h-full object-cover" />
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* Favorite count */}
-        <div className="mt-8 text-center text-sm text-gray-400 flex items-center justify-center">
-          <Heart className="h-4 w-4 text-gray-400 mr-1" /> {event._count.favorites} 人收藏此賽事
-        </div>
+        {/* Reviews, Photos & Favorite (Client Component) */}
+        <EventDetailClient
+          eventId={event.id}
+          initialReviews={JSON.parse(JSON.stringify(event.reviews))}
+          initialPhotos={JSON.parse(JSON.stringify(event.photos))}
+          isLoggedIn={isLoggedIn}
+          initialFavorited={isFavorited}
+          initialFavoriteCount={event._count.favorites}
+        />
       </div>
     </section>
   );

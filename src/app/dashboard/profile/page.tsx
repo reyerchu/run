@@ -89,7 +89,7 @@ export default function ProfilePage() {
 
   if (loading) {
     return (
-      <div className="max-w-2xl mx-auto space-y-6">
+      <div className="space-y-8">
         <div className="h-8 bg-gray-200 rounded w-1/3 animate-pulse"></div>
         <div className="bg-white ring-1 ring-gray-950/10 shadow-sm rounded-2xl p-6">
           <div className="space-y-4">
@@ -110,7 +110,7 @@ export default function ProfilePage() {
   }
 
   return (
-    <div className="max-w-2xl mx-auto space-y-6">
+    <div className="space-y-8">
       {/* Header */}
       <div>
         <p className="font-mono uppercase tracking-wider text-xs text-gray-500 mb-2">Profile</p>

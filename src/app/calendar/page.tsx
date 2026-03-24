@@ -60,7 +60,7 @@ export default function CalendarPage() {
           <h1>
             <span className="font-semibold text-gray-950 text-3xl tracking-tight">賽事行事曆.</span>
             <span className="font-medium text-gray-600 text-base ml-2">
-              以月份視圖瀏覽所有賽事，輕鬆規劃你的跑步行程
+              以月份視圖瀏覽所有賽事，輕鬆規劃您的跑步行程
             </span>
           </h1>
         </div>

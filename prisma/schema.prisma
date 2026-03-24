@@ -60,6 +60,7 @@ model User {
   favorites Favorite[]
   raceLogs  RaceLog[]
   posts     Post[]
+  feedbacks Feedback[]
 }
 
 model Photo {
@@ -192,4 +193,18 @@ model Post {
 
   @@index([userId])
   @@index([createdAt])
+}
+
+model Feedback {
+  id        String   @id @default(cuid())
+  userId    String
+  type      String   // bug, feature, general, other
+  content   String
+  email     String
+  status    String   @default("pending") // pending, reviewed, resolved
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
 }

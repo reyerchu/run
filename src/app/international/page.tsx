@@ -71,7 +71,7 @@ export default async function InternationalPage(props: { searchParams: Promise<R
           <h1>
             <span className="font-semibold text-gray-950 text-3xl tracking-tight">國際賽事.</span>
             <span className="font-medium text-gray-600 text-base ml-2">
-              探索世界各地馬拉松賽事，開展你的國際跑步之旅
+              探索世界各地馬拉松賽事，開展您的國際跑步之旅
             </span>
           </h1>
         </div>

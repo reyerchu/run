@@ -82,7 +82,7 @@ export default async function HomePage() {
             {/* Right: 2/5 width - Description & CTAs */}
             <div className="w-2/5">
               <p className="text-lg text-gray-200 leading-relaxed max-w-[40ch] text-pretty">
-                一站式跑者賽事平台，探索台灣及國際馬拉松、查詢報名資訊、記錄你的跑步旅程。
+                一站式跑者賽事平台，探索台灣及國際馬拉松、查詢報名資訊、記錄您的跑步旅程。
               </p>
               <div className="mt-6 flex flex-col gap-3">
                 <Link
@@ -162,7 +162,7 @@ export default async function HomePage() {
               <h2>
                 <span className="font-semibold text-gray-950 text-2xl tracking-tight">近期賽事.</span>
                 <span className="font-medium text-gray-600 text-base ml-2">
-                  探索即將到來的馬拉松賽事，提前規劃你的跑步行程
+                  探索即將到來的馬拉松賽事，提前規劃您的跑步行程
                 </span>
               </h2>
             </div>

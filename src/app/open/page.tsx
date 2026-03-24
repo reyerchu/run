@@ -29,7 +29,7 @@ export default async function OpenPage() {
           <h1>
             <span className="font-semibold text-gray-950 text-3xl tracking-tight">可報名賽事.</span>
             <span className="font-medium text-gray-600 text-base ml-2">
-              目前開放報名中的賽事，共 {openEvents.length} 場賽事等你來挑戰
+              目前開放報名中的賽事，共 {openEvents.length} 場賽事等您來挑戰
             </span>
           </h1>
         </div>

@@ -5,12 +5,13 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BarChart3, ClipboardList, User, X, Menu } from "lucide-react";
+import { BarChart3, ClipboardList, User, MessageSquarePlus, X, Menu } from "lucide-react";
 
 const sidebarItems = [
   { href: "/dashboard", label: "總覽", icon: BarChart3 },
   { href: "/dashboard/records", label: "跑步紀錄", icon: ClipboardList },
   { href: "/dashboard/profile", label: "個人檔案", icon: User },
+  { href: "/dashboard/feedback", label: "意見反饋", icon: MessageSquarePlus },
 ];
 
 export default function DashboardLayout({
@@ -54,13 +55,16 @@ export default function DashboardLayout({
 
       {/* Sidebar */}
       <div
-        className={`fixed inset-y-0 left-0 z-50 w-64 bg-white ring-1 ring-gray-950/5 shadow-lg transform transition-transform duration-300 ease-in-out lg:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 z-50 w-64 bg-white ring-1 ring-gray-950/5 shadow-lg transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:top-16 lg:z-40 ${
           sidebarOpen ? "translate-x-0" : "-translate-x-full"
         } lg:block`}
       >
         <div className="flex flex-col h-full">
           <div className="flex items-center justify-between h-16 px-5 border-b border-gray-950/5">
-            <h2 className="text-base font-semibold text-gray-900 tracking-tight">跑者儀表板</h2>
+            <Link href="/dashboard" onClick={() => setSidebarOpen(false)}>
+              <h2 className="text-lg font-bold text-gray-900 tracking-tight hover:text-emerald-600 transition-colors">跑者儀表板</h2>
+              <p className="text-xs text-gray-400 leading-5">記錄您的每一步</p>
+            </Link>
             <button
               onClick={() => setSidebarOpen(false)}
               className="lg:hidden p-1.5 rounded-full text-gray-400 hover:text-gray-600 hover:bg-gray-950/5 transition-colors"
